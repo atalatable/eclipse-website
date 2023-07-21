@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "Teko";
+    src: url("./assets/fonts/Teko-Medium.ttf");
+}
+
+$bgColor_light: white;
+$bgColor_dark: black;
+
+$textColor_light: black;
+$textColor_dark: white;
+
+$borderColor_light: #aaa;
+$borderColor_dark: white;
+
+// mixin that enables css variables in light mode
+@mixin lighten() {
+    --bgColor: #{$bgColor_light};
+    --textColor: #{$textColor_light};
+    --borderColor: #{$borderColor_light};
+}
+
+// mixin that enables css variables in dark mode
+@mixin darken() {
+    --bgColor: #{$bgColor_dark};
+    --textColor: #{$textColor_dark};
+    --borderColor: #{$borderColor_dark};
+}
+
+body.dark {
+    @include darken();
+}
+body.light, body:not(.dark) {
+    @include lighten();
+}
+
+body {
+    margin: 0;
+    background-color: var(--bgColor);
+    font-family: 'Teko';
+    font-size: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+app-root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    & > :nth-child(3) {
+        flex-grow: 5;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

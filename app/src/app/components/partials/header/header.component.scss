@@ -1,0 +1,80 @@
+header {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+
+    // Right side of the header
+    #right-header {
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+
+        text-transform: uppercase;
+
+        & h1 {
+            font-weight: 800;
+            margin: 0;
+            padding-top: 8px;
+        }
+    }
+
+    img {
+        border-radius: 100%;
+        height: 80%;
+    }
+
+    // Left side of the header
+    nav {
+        height: 100%;
+        
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+    
+        & a {
+            color: var(--borderColor);
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            font-weight: 550;
+        
+            text-transform: uppercase;
+
+            
+            position: relative;
+            
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 0%;
+                content: '.';
+                color: transparent;
+                background: var(--textColor);
+                height: 2px;
+                transition: all 1s;
+            }
+            
+            &:hover::after {
+                width: 100%;
+            }
+            
+            &:hover {
+                color: var(--textColor);
+            }
+        }
+
+        & li {
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+}

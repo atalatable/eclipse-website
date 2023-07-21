@@ -1,0 +1,19 @@
+footer {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 10px 0 20px 0;
+    
+    border-top: 1px solid var(--borderColor);
+
+    font-size: .8em;
+
+    & h4 {
+        text-decoration: underline;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}
