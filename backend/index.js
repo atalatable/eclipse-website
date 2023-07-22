@@ -9,6 +9,8 @@ app.get('/api/members', (req, res) => {
    res.send(members);
 });
 
+app.use(express.static('app'));
+
 app.listen(port,() => {
     console.log("Express Server listening on port " + port)
 });
