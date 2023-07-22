@@ -8,6 +8,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { MembersComponent } from './components/pages/members/members.component';
 import { NewsComponent } from './components/pages/news/news.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { UnknownComponent } from './components/pages/unknown/unknown.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './components/pages/about/about.component';
     FooterComponent,
     MembersComponent,
     NewsComponent,
-    AboutComponent
+    AboutComponent,
+    UnknownComponent
   ],
   imports: [
     BrowserModule,
