@@ -1,0 +1,16 @@
+<div class="card-container">
+    <div 
+    class="card" 
+    (click)="cardClicked()"
+    [ngClass]="state">
+
+        <div class="front">
+            <img [src]="member.imageURL" alt="{{member.name}} profile picture">
+            <p>{{member.name}}</p>
+        </div>
+        <div class="back">
+            <p>{{member.role}}</p>
+            <p *ngIf="member.lineup">{{member.lineup}}</p>
+        </div>
+    </div>
+</div>

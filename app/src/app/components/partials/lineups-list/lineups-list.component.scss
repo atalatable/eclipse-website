@@ -1,0 +1,26 @@
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-bottom: 20px;
+
+    user-select: none;
+
+    & a {
+        cursor: pointer;
+        padding: 0 10px;
+        border: 1px solid yellow;
+        
+        &:hover {
+            text-decoration: none;
+            background-color: var(--textColor);
+            color: var(--greyColor);
+
+            transition: all 1s;
+        }
+    }
+}

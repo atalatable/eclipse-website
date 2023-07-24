@@ -6,17 +6,21 @@
 $bgColor_light: white;
 $bgColor_dark: black;
 
-$textColor_light: black;
+$textColor_light: white;
 $textColor_dark: white;
 
-$borderColor_light: #aaa;
+$borderColor_light: black;
 $borderColor_dark: white;
+
+$greyColor_light: rgb(74, 74, 74);
+$greyColor_dark: rgb(150, 150, 150);
 
 // mixin that enables css variables in light mode
 @mixin lighten() {
     --bgColor: #{$bgColor_light};
     --textColor: #{$textColor_light};
     --borderColor: #{$borderColor_light};
+    --greyColor: #{$greyColor_light};
 }
 
 // mixin that enables css variables in dark mode
@@ -24,6 +28,7 @@ $borderColor_dark: white;
     --bgColor: #{$bgColor_dark};
     --textColor: #{$textColor_dark};
     --borderColor: #{$borderColor_dark};
+    --greyColor: #{$greyColor_dark};
 }
 
 body.dark {
@@ -35,9 +40,21 @@ body.light, body:not(.dark) {
 
 body {
     margin: 0;
-    background-color: var(--bgColor);
     font-family: 'Teko';
     font-size: 1.5em;
+
+    background: hsla(246, 71%, 14%, 1);
+
+    background: linear-gradient(45deg, hsla(246, 71%, 14%, 1) 0%, hsla(335, 93%, 48%, 1) 50%, hsla(49, 100%, 51%, 1) 100%);
+
+    background: -moz-linear-gradient(45deg, hsla(246, 71%, 14%, 1) 0%, hsla(335, 93%, 48%, 1) 50%, hsla(49, 100%, 51%, 1) 100%);
+
+    background: -webkit-linear-gradient(45deg, hsla(246, 71%, 14%, 1) 0%, hsla(335, 93%, 48%, 1) 50%, hsla(49, 100%, 51%, 1) 100%);
+
+    color: var(--textColor);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 a {
@@ -45,13 +62,17 @@ a {
     color: var(--textColor);
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 app-root {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
-    & > :nth-child(3) {
+    & > :nth-child(2) {
         flex-grow: 5;
     }
 }
@@ -60,4 +81,9 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+main {
+    margin: auto;
+    width: 90%;
 }

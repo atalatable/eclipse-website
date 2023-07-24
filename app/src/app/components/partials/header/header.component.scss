@@ -3,9 +3,12 @@ header {
     height: 8vh;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
 
+    user-select: none;
+    
     // Right side of the header
-    #right-header {
+    #left-header {
         height: 100%;
 
         display: flex;
@@ -37,7 +40,7 @@ header {
         gap: 20px;
     
         & a {
-            color: var(--borderColor);
+            color: var(--textColor);
             height: 100%;
             display: flex;
             align-items: center;
@@ -60,15 +63,17 @@ header {
                 color: transparent;
                 background: var(--textColor);
                 height: 2px;
-                transition: all 1s;
+                transition: width 1s;
             }
             
             &:hover::after {
+                background: var(--borderColor);
                 width: 100%;
             }
             
             &:hover {
-                color: var(--textColor);
+                color: var(--borderColor);
+                text-decoration: none;
             }
         }
 

@@ -9,6 +9,7 @@ import { UnknownComponent } from './components/pages/unknown/unknown.component';
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'members', component:MembersComponent},
+  {path:'members/:lineup', component:MembersComponent},
   {path:'news', component:NewsComponent},
   {path:'about', component:AboutComponent},
   {path:'**', component:UnknownComponent}

@@ -1,0 +1,10 @@
+<ul *ngIf="members[0]">
+    <app-member-detail 
+        *ngFor="let member of members"
+        [member]="member">
+    </app-member-detail>
+</ul>
+
+<p *ngIf="!members[0]">
+    No members currently in the line-up
+</p>
