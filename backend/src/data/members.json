@@ -1,0 +1,199 @@
+{
+    "members": [
+        {
+            "name": "jingatak",
+            "role": "Head manager",
+            "imageURL": "https://cdn.discordapp.com/avatars/153623885223428097/0fdc7966eff041a09431b4ba6734009a.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "oclaff",
+            "role": "Head manager",
+            "imageURL": "https://cdn.discordapp.com/avatars/177904371672154112/2461d7d50b20f3713b0984aefa7832ad.png?size=2048",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "bueno",
+            "role": "manager TM",
+            "imageURL": "https://cdn.discordapp.com/avatars/229241724130557952/5f60c5033798e5d2617b8c741da413a8.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "werthigo",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/336618587949105152/48ab997d949478b532fcf27f72bfb256?size=1024",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "bullemite",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/245255396875304960/9b152936c1ab562d57e216375553e777.png?size=2048",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "mc2x",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/169925888195035136/7cf4e8ed19b59df7a71d29925d000a1e.png?size=2048",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "sawki",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/474124450418262019/a_03561ecce5ef294abe36aab5ab21e209.png?size=2048",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "vetis",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/277466222201798656/337cbae250b949a33c209d905c71b633.png?size=2048",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "yezaliah",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/166951169892024321/deb20137662d6ebe74f37647d83610e5.png?size=2048",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "warock",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/529792611175759883/0c0ebbe7921258385106bc4c015b47fe.png?size=2048",
+            "lineup": "pulsar"
+        },
+        {
+            "name": "atalata",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/400629408312066049/c8530477629b97d955b6302dc12bdfab.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "dam",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/605073248375406624/0a002337a91057699f0a27f74d88dbc3.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "dydy",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/247787125699772416/cdf9a30b5af0ef65b92d002bf12ef836.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "romain",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/340602267407220737/540d6d1c6413fe280f23feea84dfcd8a.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "snake",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/220516632877989889/aec62db57e11d00169e370ee1f68eb85.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "tseko",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/286526207556845569/d851260a94f50f653d98f5338d19c4b0.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "warl",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/268870783701352448/923bbb99c1586587adb188a4244623c6.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "lueces",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/292363744388841473/1ad1ad38f092c777c39d22e2aa9dea13.png?size=2048",
+            "lineup": "stellar"
+        },
+        {
+            "name": "chakymi",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/564884587898208268/927728fdfd0ad063ecf0f25c94c2703d.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "heyerdal",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/178555415074832386/01ecc48c043eb867dc4866e0dc577944.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "mush",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/604373518712569856/abe181552a07b728884da68512c17d12.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "oranjules",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/476768568084529153/922fe333887d4da51ebdf9667eca7e57.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "skuen",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/713698714530611220/b27bde710a7bdf82e2bf6aeb0cdbd2e2.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "streaxID",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/487666381572276234/63237147916d0dd33e8cef504a217ed9.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "vyooz",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/243424773286133761/567b3fb60cd56ff5439d08b19d62f691.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "ayuido",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/236768915701628929/3c0ca504afb03923ccb39dd82c329a33.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "maidenDay",
+            "role": "player",
+            "imageURL": "https://cdn.discordapp.com/avatars/180235053987528704/f8c497ba82cc08e830481e9210ccc90e.png?size=2048",
+            "lineup": "nova"
+        },
+        {
+            "name": "xueliam",
+            "role": "manager LoL / mid",
+            "imageURL": "https://cdn.discordapp.com/avatars/137683446100262913/bff6c0946233a91714cc32e8e002315f.png?size=2048",
+            "lineup": "LoL"
+        },
+        {
+            "name": "amin",
+            "role": "top",
+            "imageURL": "https://cdn.discordapp.com/avatars/153546113343946752/d099765b47c48ade6f44c0cfc43e948f.png?size=2048",
+            "lineup": "LoL"
+        },
+        {
+            "name": "dragster",
+            "role": "jungle",
+            "imageURL": "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg",
+            "lineup": "LoL"
+        },
+        {
+            "name": "atuda",
+            "role": "Adc",
+            "imageURL": "https://cdn.discordapp.com/avatars/336575892803551234/c9ad182e1ceab7b1eba997186aea0084.png?size=2048",
+            "lineup": "LoL"
+        },
+        {
+            "name": "arthas",
+            "role": "support",
+            "imageURL": "https://cdn.discordapp.com/avatars/398816673542569994/fba2b71170a93325554d76ae32bee8f4.png?size=2048",
+            "lineup": "LoL"
+        }
+    ],
+    "lineups": [
+        "Stellar", "Pulsar", "Nova", "LoL"
+    ]
+}
