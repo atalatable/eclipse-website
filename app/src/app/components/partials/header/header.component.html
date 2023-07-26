@@ -1,14 +1,21 @@
 <header>
     <a routerLink="">
         <div id="left-header">
-            <img src="/assets/images/logo.jpg" alt="Eclipse logo">
+            <img src="/assets/images/logo.jpg" alt="Eclipse logo" class="logo">
             <h1>Eclipse</h1>
         </div>
     </a>
     <nav>
-        <li><a routerLink="/" >Home</a></li>
-        <li><a routerLink="/news" >News</a></li>
-        <li><a routerLink="/members" >Members</a></li>
-        <li><a routerLink="/about" >About</a></li>
+        <ul [ngClass]="showNavOnMobile ? 'active' : ''">
+            <li (click)="linkClicked()"><a routerLink="/" >Home</a></li>
+            <li (click)="linkClicked()"><a routerLink="/news" >News</a></li>
+            <li (click)="linkClicked()"><a routerLink="/members" >Members</a></li>
+            <li (click)="linkClicked()"><a routerLink="/about" >About</a></li>
+        </ul>
     </nav>
+    <div class="hamburger" (click)="burgerClicked()" [ngClass]="showNavOnMobile ? 'active' : ''">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
 </header>

@@ -85,5 +85,12 @@ ul {
 
 main {
     margin: auto;
-    width: 90%;
+    width: 1400px;
+}
+
+$breakpoint-large: 1500px;
+@media (max-width: $breakpoint-large) {
+    main {
+        width: 90%;
+    }
 }

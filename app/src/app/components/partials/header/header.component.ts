@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  showNavOnMobile:boolean = false;
 
+  burgerClicked():void {
+    this.showNavOnMobile = !this.showNavOnMobile;
+  }
+
+  linkClicked():void {
+    this.showNavOnMobile = false;
+  }
 }
