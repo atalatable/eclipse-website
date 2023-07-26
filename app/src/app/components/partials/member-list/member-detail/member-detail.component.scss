@@ -26,6 +26,7 @@
     transform-style: preserve-3d;
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+    
     & div {
         display: block;
         height: 100%;
@@ -60,6 +61,7 @@
                 height: 80px;
                 width: auto;
                 border-radius: 100%;
+                user-select: none;
             }
         }
 

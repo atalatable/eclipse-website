@@ -55,6 +55,9 @@ body {
 
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
 }
 
 a {
@@ -85,10 +88,19 @@ ul {
 
 main {
     margin: auto;
-    width: 1400px;
 }
 
-$breakpoint-large: 1500px;
+::-webkit-scrollbar {
+    display: none;
+}
+
+$breakpoint-large: 1400px;
+@media (min-width: $breakpoint-large) {
+    main {
+        width: 1300px;
+    }
+}
+
 @media (max-width: $breakpoint-large) {
     main {
         width: 90%;
