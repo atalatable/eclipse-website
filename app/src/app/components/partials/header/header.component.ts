@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -15,4 +15,13 @@ export class HeaderComponent {
   linkClicked():void {
     this.showNavOnMobile = false;
   }
+
+  @HostListener('document:touchstart', ['$event'])
+  clickout(event) {
+    if(!this.eRef.nativeElement.contains(event.target)) {
+      this.showNavOnMobile == true ? this.showNavOnMobile = false : null;
+    }
+  }
+
+  constructor(private eRef:ElementRef ) {}
 }
