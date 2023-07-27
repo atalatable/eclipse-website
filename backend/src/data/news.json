@@ -1,0 +1,27 @@
+[
+    {
+        "title": "First news",
+        "content": "This is the content of the news",
+        "date": "27/07/2023"
+    },
+    {
+        "title": "Second news",
+        "content": "This is the content of the news",
+        "date": "27/07/2023"
+    },
+    {
+        "title": "Third news",
+        "content": "This is the content of the news",
+        "date": "27/07/2023"
+    },
+    {
+        "title": "Fourth news",
+        "content": "This is the content of the news",
+        "date": "27/07/2023"
+    },
+    {
+        "title": "Fifth news",
+        "content": "This is the content of the news",
+        "date": "27/07/2023"
+    }
+]

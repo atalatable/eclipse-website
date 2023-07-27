@@ -17,6 +17,13 @@ export class HeaderComponent {
   }
 
   @HostListener('document:touchstart', ['$event'])
+  swipeout(event) {
+    if(!this.eRef.nativeElement.contains(event.target)) {
+      this.showNavOnMobile == true ? this.showNavOnMobile = false : null;
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
   clickout(event) {
     if(!this.eRef.nativeElement.contains(event.target)) {
       this.showNavOnMobile == true ? this.showNavOnMobile = false : null;

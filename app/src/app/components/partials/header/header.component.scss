@@ -84,45 +84,47 @@ header {
 $breakpoint-header: 550px;
 @media (min-width: $breakpoint-header) {
     header {
-        & ul {
-            gap: 20px;
-        }
-
-        & a {
-            color: var(--textColor);
-            height: 100%;
-            display: flex;
-            align-items: center;
-
-            font-weight: 550;
-        
-            text-transform: uppercase;
-
-            
-            position: relative;
-            
-            &::after {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-                width: 0%;
-                content: '.';
-                color: transparent;
-                background: var(--textColor);
-                height: 2px;
-                transition: width 1s;
+        & nav {
+            & ul {
+                gap: 20px;
             }
+
+            & a {
+                color: var(--textColor);
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                font-weight: 550;
             
-            &:hover::after {
-                background: var(--borderColor);
-                width: 100%;
-            }
-            
-            &:hover {
-                color: var(--borderColor);
-                text-decoration: none;
+                text-transform: uppercase;
+
+                
+                position: relative;
+                
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 0%;
+                    content: '.';
+                    color: transparent;
+                    background: var(--textColor);
+                    height: 2px;
+                    transition: width 1s;
+                }
+                
+                &:hover::after {
+                    background: var(--borderColor);
+                    width: 100%;
+                }
+                
+                &:hover {
+                    color: var(--borderColor);
+                    text-decoration: none;
+                }
             }
         }
     }
