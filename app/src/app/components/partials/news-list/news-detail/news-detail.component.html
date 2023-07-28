@@ -1,0 +1,10 @@
+<div class="news-container" *ngIf="news" (click)="goToNewsDetail()">
+    <img *ngIf="news.imageUrl" [src]="news.imageUrl" alt="{{news.title}} image" draggable="false">
+    <div class="text">
+        <h2>{{news.title}}</h2>
+        <span>{{news.date}}</span>
+        <p>{{getDesc()}}</p>
+    </div>
+</div>
+
+<p *ngIf="!news">An error occured</p>

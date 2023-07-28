@@ -1,0 +1,9 @@
+<h2>Eclipse's news</h2>
+<div class="news-list-container" *ngIf="newsList.length > 0">
+    <app-news-detail *ngFor="let news of newsList; let i = index"
+                     [news]="news"
+                     [index]="i"
+    ></app-news-detail>
+</div>
+
+<p *ngIf="newsList.length == 0">No news to see here</p>

@@ -15,6 +15,10 @@ import { MemberDetailComponent } from './components/partials/member-list/member-
 import { LineupsListComponent } from './components/partials/lineups-list/lineups-list.component';
 import { LoadingComponent } from './components/partials/loading/loading.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { NewsListComponent } from './components/partials/news-list/news-list.component';
+import { NewsDetailComponent } from './components/partials/news-list/news-detail/news-detail.component';
+import { NewsViewComponent } from './components/partials/news-view/news-view.component';
+import { PageNavigatorComponent } from './components/partials/page-navigator/page-navigator.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     MemberListComponent,
     MemberDetailComponent,
     LineupsListComponent,
-    LoadingComponent
+    LoadingComponent,
+    NewsListComponent,
+    NewsDetailComponent,
+    NewsViewComponent,
+    PageNavigatorComponent
   ],
   imports: [
     BrowserModule,

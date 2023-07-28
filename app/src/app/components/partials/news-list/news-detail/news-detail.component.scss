@@ -1,0 +1,31 @@
+.news-container {
+    margin: 0;
+
+    border: 1px solid var(--textColor);
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+
+    padding: 0 20px;
+    border-radius: 20px;
+
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        padding: 10px 20px;
+    }
+
+    transition: all .5s;
+    
+    & h2 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    & img {
+        max-height: 150px;
+    }
+}

@@ -1,0 +1,1 @@
+export const NEWS_PER_PAGES = 2;

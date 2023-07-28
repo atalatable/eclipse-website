@@ -1,0 +1,13 @@
+.news-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    width: 50%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+}
