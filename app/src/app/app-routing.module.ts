@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'members/:lineup', component:MembersComponent},
   {path:'news', component:NewsComponent},
   {path:'news/:page', component:NewsComponent},
-  {path:'news/view/:newsIndex', component:NewsViewComponent},
+  {path:'news/view/:title', component:NewsViewComponent},
   {path:'about', component:AboutComponent},
   {path:'**', component:UnknownComponent}
 ];

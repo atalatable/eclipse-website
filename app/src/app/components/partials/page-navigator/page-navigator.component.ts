@@ -30,7 +30,15 @@ export class PageNavigatorComponent {
     }
   }
 
-  public getPageAmount():number {
+  public getPageArray(): number[] {
+    let returnArray:number[] = [];
+    for(let i = 1; i <= this.getPageAmount(); i++) {
+      returnArray.push(i);
+    }
+    return returnArray;
+  }
+
+  private getPageAmount():number {
     return Math.ceil(this.newsAmmount / NEWS_PER_PAGES);
   }
 }

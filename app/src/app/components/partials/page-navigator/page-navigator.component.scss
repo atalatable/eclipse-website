@@ -1,0 +1,30 @@
+.paginator {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 20px;
+
+    & li {
+        cursor: pointer;
+        user-select: none;
+
+        width: 30px;
+        height: 35px;
+        border: 1px solid var(--textColor);
+        text-align: center;
+
+        &:hover {
+            background-color: #ccc;
+            color: black;
+        }
+
+        &.current {
+            background-color: var(--greyColor);
+            border: 1px solid var(--greyColor);
+            color: var(--textColor);
+            cursor: auto;
+        }
+    }
+}

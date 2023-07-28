@@ -11,17 +11,23 @@ router.get('/count', (req, res) => {
 });
 
 /*
-*   Sends the news object corresponding to the given id
+*   Sends the news object corresponding to the given title
 */
-router.get('/:id', (req ,res) => {
-    const id = req.params.id;
+router.get('/:title', (req ,res) => {
+    const title = req.params.title;
 
-    const newsArray = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/news.json")));
+    let newsArray = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/news.json")));
 
-    if (newsArray[id]) {
-        res.send(newsArray[id]);
+    newsArray = newsArray.filter((news) => {
+        return news.title == decodeURI(title);
+    })
+
+    console.log(newsArray)
+
+    if (newsArray.length > 0) {
+        res.send(newsArray[0]);
     } else {
-        res.send(404);
+        res.sendStatus(404);
     }
 });
 

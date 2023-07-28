@@ -1,1 +1,1 @@
-export const NEWS_PER_PAGES = 2;
+export const NEWS_PER_PAGES = 4;

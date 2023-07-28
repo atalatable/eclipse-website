@@ -17,7 +17,7 @@ export class NewsDetailComponent {
   }
 
   public goToNewsDetail():void {
-    this.router.navigate(['/news/view', this.index + 1]);
+    this.router.navigate(['/news/view', this.news.title]);
   }
 
   constructor(private router:Router) {}

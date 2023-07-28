@@ -27,7 +27,7 @@ export class NewsComponent implements OnInit, OnDestroy {
 
       if (param.page && param.page != 1) {
         newsObservable = this.newsService.getNewsFromTo((param.page - 1) * NEWS_PER_PAGES, NEWS_PER_PAGES);
-        this.page = param.page;
+        this.page = parseInt(param.page);
       } else {
         newsObservable = this.newsService.getNewsFromTo(0, NEWS_PER_PAGES);
         this.page = 1;

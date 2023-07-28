@@ -1,1 +1,8 @@
-<p>Current page : {{getPageAmount()}}</p>
+<ul class="paginator">
+    <li (click)="navigateToPage(currentPage - 1)">&laquo;</li>
+    <li *ngFor="let i of getPageArray()"
+        [ngClass]="currentPage == i ? 'current' : ''"
+        (click)="navigateToPage(i)"
+    >{{i}}</li>
+    <li (click)="navigateToPage(currentPage + 1)">&raquo;</li>
+</ul>
