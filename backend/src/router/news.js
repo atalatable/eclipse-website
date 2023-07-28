@@ -22,8 +22,6 @@ router.get('/:title', (req ,res) => {
         return news.title == decodeURI(title);
     })
 
-    console.log(newsArray)
-
     if (newsArray.length > 0) {
         res.send(newsArray[0]);
     } else {

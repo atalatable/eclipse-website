@@ -7,7 +7,7 @@
     },
     {
         "title": "Fourth news",
-        "content": "This is the content of the news",
+        "content": "This is the content of the news\n\nAnd this is a new line",
         "date": "27/07/2023",
         "imageUrl": "https://media.discordapp.net/attachments/620751675719680040/1023704862556422214/WERTHIFERMIER.png"
     },

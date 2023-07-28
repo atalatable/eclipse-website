@@ -19,6 +19,7 @@ import { NewsListComponent } from './components/partials/news-list/news-list.com
 import { NewsDetailComponent } from './components/partials/news-list/news-detail/news-detail.component';
 import { NewsViewComponent } from './components/partials/news-view/news-view.component';
 import { PageNavigatorComponent } from './components/partials/page-navigator/page-navigator.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PageNavigatorComponent } from './components/partials/page-navigator/pag
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MarkdownModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}

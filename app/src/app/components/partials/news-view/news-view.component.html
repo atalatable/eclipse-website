@@ -1,3 +1,6 @@
-<h2>{{news.title}}</h2>
+<div class="header">
+    <h2>{{news.title}}</h2>
+    <p>{{news.date}}</p>
+</div>
 
-<markdown [data]="news.content"></markdown>
+<div markdown [data]="news.content"></div>
