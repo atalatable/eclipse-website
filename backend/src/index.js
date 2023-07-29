@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -8,7 +9,7 @@ const newsRoute = require('./router/news');
 
 const app = express();
 app.use(express.json())
-const port = process.env.port || 5000;
+const port = process.env.NODEJS_LOCAL_PORT || 5000;
 
 // For developpment puroposes only
 

@@ -10,7 +10,7 @@ router.get('/count', (req, res) => {
     .then(rows => {
         res.send(rows[0]);
     }).catch(err => {
-        console.err(err);
+        console.error(err);
         res.sendStatus(500);
     });
 });
@@ -25,7 +25,7 @@ router.get('/:title', (req ,res) => {
     .then(rows => {
         res.send(rows[0]);
     }).catch(err => {
-        console.log(err);
+        console.error(err);
         res.sendStatus(500);
     });
 });
@@ -43,6 +43,7 @@ router.get('/:id/:count', (req ,res) => {
         res.send(rows);
     }).catch(err => {
         console.error(err);
+        res.sendStatus(500);
     });
 });
 
