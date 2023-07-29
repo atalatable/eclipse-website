@@ -1,25 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const db = require('../services/db');
 
 /*
 *   Sends all the members in a random order
 */
 router.get('/', (req, res) => {
-    res.send(
-        JSON.parse(
-            fs.readFileSync(
-            path.join(__dirname, "../data/members.json"))).members.
-            sort((a,b) => ( 0.5 - Math.random() ))
-    );
+    db.query("SELECT members.name, members.role, members.imageUrl, lineups.name AS lineup FROM members INNER JOIN lineups on lineups.id = members.id_lineups ORDER BY RAND();")
+    .then(rows => {
+        res.send(rows);
+    }).catch(err => {
+        console.error(err);
+        res.sendStatus(500);
+    });
 });
 
 /*
 *   Sends all the linups in an array
 */
 router.get('/lineups', (req, res) => {
-    res.send(JSON.parse(fs.readFileSync(path.join(__dirname, "../data/members.json"))).lineups);
+    db.query("SELECT name from lineups;")
+    .then(rows => {
+        res.send(rows.map(item => item.name));
+    }).catch(err => {
+        console.error(err);
+        res.sendStatus(500);
+    });
 });
 
 /*
@@ -27,7 +33,13 @@ router.get('/lineups', (req, res) => {
 */
 router.get('/lineups/:lineup', (req, res) => {
     const lu = req.params.lineup;
-    res.send(JSON.parse(fs.readFileSync(path.join(__dirname, "../data/members.json"))).members.filter(member => member.lineup.toLowerCase() == lu));
+    db.query("SELECT members.name, members.role, members.imageUrl, lineups.name AS lineup FROM members INNER JOIN lineups on lineups.id = members.id_lineups WHERE lineups.name = ? ORDER BY RAND();", lu)
+    .then(rows => {
+        res.send(rows);
+    }).catch(err => {
+        console.error(err);
+        res.sendStatus(500);
+    });
 });
 
-module.exports = router
+module.exports = router;

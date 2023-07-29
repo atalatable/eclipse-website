@@ -1,32 +1,33 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const db = require('../services/db');
 
 /*
 *   Sends the total count of news
 */
 router.get('/count', (req, res) => {
-    res.send({ count: JSON.parse(fs.readFileSync(path.join(__dirname, "../data/news.json"))).length });
+    db.query("SELECT COUNT(*) AS count FROM news;")
+    .then(rows => {
+        res.send(rows[0]);
+    }).catch(err => {
+        console.err(err);
+        res.sendStatus(500);
+    });
 });
 
 /*
 *   Sends the news object corresponding to the given title
 */
 router.get('/:title', (req ,res) => {
-    const title = req.params.title;
+    const title = decodeURI(req.params.title);
 
-    let newsArray = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/news.json")));
-
-    newsArray = newsArray.filter((news) => {
-        return news.title == decodeURI(title);
-    })
-
-    if (newsArray.length > 0) {
-        res.send(newsArray[0]);
-    } else {
-        res.sendStatus(404);
-    }
+    db.query("SELECT title, description, content, imageUrl, DATE_FORMAT(date,'%d/%m/%Y') as date FROM news WHERE title = ?;", title)
+    .then(rows => {
+        res.send(rows[0]);
+    }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+    });
 });
 
 /*
@@ -37,16 +38,12 @@ router.get('/:id/:count', (req ,res) => {
     const id = parseInt(req.params.id);
     const count = parseInt(req.params.count);
 
-    const newsArray = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/news.json")));
-    let returnArray = [];
-
-    for (let i = 0; i < count; i++) {
-        if (newsArray[id + i]) {
-            returnArray.push(newsArray[id + i]);
-        }
-    }
-
-    res.send(returnArray);
+    db.query("SELECT title, description, content, imageUrl, DATE_FORMAT(date,'%d/%m/%Y') as date FROM news ORDER BY date LIMIT ? OFFSET ?;", [count, id])
+    .then(rows => {
+        res.send(rows);
+    }).catch(err => {
+        console.error(err);
+    });
 });
 
 module.exports = router

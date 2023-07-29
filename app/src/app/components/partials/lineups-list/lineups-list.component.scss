@@ -10,6 +10,8 @@ ul {
 
     user-select: none;
 
+    text-transform: capitalize;
+
     & a {
         cursor: pointer;
         padding: 0 10px;
