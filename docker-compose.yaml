@@ -13,17 +13,23 @@ services:
     volumes: 
       - db-config:/etc/mysql
       - db-data:/var/lib/mysql
-      - ./db/backup/files/:/data_backup/data
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
 
   app:
     build:
       context: .
       dockerfile: ./backend/Dockerfile
     image: eclipse-webapp
-    depends_on:
-      - mysqldb
     ports:
-      - 5000:5000
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    volumes: 
+      - ./app:/app
+    depends_on:
+      mysqldb:
+        condition: service_healthy
     stdin_open: true
     tty: true
 

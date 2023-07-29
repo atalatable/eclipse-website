@@ -5,18 +5,6 @@
 -- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- SET FOREIGN_KEY_CHECKS=0;
 
--- ---
--- Table 'lineups'
--- 
--- ---
-
-DROP TABLE IF EXISTS `lineups`;
-		
-CREATE TABLE `lineups` (
-  `id` INTEGER AUTO_INCREMENT,
-  `name` VARCHAR(30),
-  PRIMARY KEY (`id`)
-);
 
 -- ---
 -- Table 'members'
@@ -47,7 +35,7 @@ CREATE TABLE `news` (
   `description` VARCHAR(400) DEFAULT "",
   `content` TEXT NOT NULL,
   `imageUrl` VARCHAR(256) DEFAULT "",
-  `date` DATETIME DEFAULT CURRENT_TIMESTAMP	,
+  `date` DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 );
 
@@ -61,7 +49,20 @@ DROP TABLE IF EXISTS `socials`;
 CREATE TABLE `socials` (
   `id` INTEGER AUTO_INCREMENT,
   `name` VARCHAR(25) NOT NULL,
-  `link` INTEGER NOT NULL,
+  `link` VARCHAR(256) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'lineups'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `lineups`;
+		
+CREATE TABLE `lineups` (
+  `id` INTEGER AUTO_INCREMENT,
+  `name` VARCHAR(30),
   PRIMARY KEY (`id`)
 );
 
