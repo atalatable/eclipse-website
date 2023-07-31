@@ -56,3 +56,7 @@ INSERT INTO `news` (`title`,`description`,`content`,`imageUrl`,`date`) VALUES ('
 INSERT INTO `news` (`title`,`description`,`content`,`imageUrl`,`date`) VALUES ('Third news','','This is the content of the news','https://media.discordapp.net/attachments/620751675719680040/1043108632650334258/29.png','2023-07-24');
 INSERT INTO `news` (`title`,`description`,`content`,`imageUrl`,`date`) VALUES ('Fourth news','','This is the content of the news\n\nAnd this is a new line','https://media.discordapp.net/attachments/620751675719680040/1023704862556422214/WERTHIFERMIER.png','2023-07-25');
 INSERT INTO `news` (`title`,`description`,`content`,`imageUrl`,`date`) VALUES ('Fifth news','This is an example of a description','This is the content of the news','https://media.discordapp.net/attachments/620751675719680040/1043095854464127006/image.png','2023-07-27');
+
+-- Admin Insertions
+
+INSERT INTO `admin` (`username`, `password`) VALUES ('admin', '5f4dcc3b5aa765d61d8327deb882cf99');

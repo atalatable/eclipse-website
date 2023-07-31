@@ -8,11 +8,9 @@ cd ../backend
 npm i
 ```
 
-To build :
+To build app into backend server :
 ```bash
-./build-docker.sh docker-name
+./build.sh
 ```
 
-Alternative : Use `docker load -i <path to image tar file>` and load the docker from the archive (available in the realeses)
-
-To run : Run the docker with the name and bind port 5000
+to run : `docker-compose up` at the root of the project

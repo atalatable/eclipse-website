@@ -11,4 +11,6 @@ export const NEWS_BY_TITLE_URL = API_URL + "/news/";
 export const NEWS_BY_ID_URL = API_URL + "/news/";
 export const NEWS_COUNT_URL = API_URL + "/news/count";
 
+export const ADMIN_LOGIN_URL = API_URL + '/admin/login'
+
 export const SOCIALS_URL = API_URL + "/socials";

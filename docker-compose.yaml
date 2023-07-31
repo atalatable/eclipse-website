@@ -27,6 +27,8 @@ services:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
     volumes: 
       - ./app:/app
+    env_file:
+      - ./.env
     depends_on:
       mysqldb:
         condition: service_healthy

@@ -1,4 +1,6 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
+import { AdminService } from 'src/app/services/admin.service';
+import { Admin } from 'src/app/shared/models/Admin';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +9,7 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   showNavOnMobile:boolean = false;
+  admin:Admin;
 
   burgerClicked():void {
     this.showNavOnMobile = !this.showNavOnMobile;
@@ -30,5 +33,9 @@ export class HeaderComponent {
     }
   }
 
-  constructor(private eRef:ElementRef ) {}
+  constructor(private eRef:ElementRef, private adminService:AdminService) {
+    this.adminService.adminObservable.subscribe(newAdmin => {
+      this.admin = newAdmin;
+    })
+  }
 }

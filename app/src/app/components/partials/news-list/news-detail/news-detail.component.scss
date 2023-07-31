@@ -6,6 +6,15 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
+
+    // @media (min-width: $breakpoint-header) {
+        
+    // }
+
+    // @media (max-width: $breakpoint-header) {
+
+    // }
     gap: 30px;
 
     padding: 0 20px;
@@ -27,5 +36,19 @@
 
     & img {
         max-height: 150px;
+        max-width: 90%;
+    }
+}
+
+$breakpoint-header: 900px;
+@media (max-width: $breakpoint-header) {
+    .news-container {
+
+        flex-direction: column;
+        // justify-content: center;
+
+        & img {
+            margin-top: 10px;
+        }
     }
 }

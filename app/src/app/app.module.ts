@@ -20,6 +20,11 @@ import { NewsDetailComponent } from './components/partials/news-list/news-detail
 import { NewsViewComponent } from './components/partials/news-view/news-view.component';
 import { PageNavigatorComponent } from './components/partials/page-navigator/page-navigator.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { AdminComponent } from './components/pages/admin/admin.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,13 +42,22 @@ import { MarkdownModule } from 'ngx-markdown';
     NewsListComponent,
     NewsDetailComponent,
     NewsViewComponent,
-    PageNavigatorComponent
+    PageNavigatorComponent,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      newestOnTop: true
+    }),
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}

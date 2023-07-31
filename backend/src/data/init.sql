@@ -67,6 +67,20 @@ CREATE TABLE `lineups` (
 );
 
 -- ---
+-- Table 'admin'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `admin`;
+		
+CREATE TABLE `admin` (
+  `id` INTEGER AUTO_INCREMENT,
+  `username` VARCHAR(30),
+  `password` VARCHAR(42),
+  PRIMARY KEY (`id`)
+);
+
+-- ---
 -- Foreign Keys 
 -- ---
 

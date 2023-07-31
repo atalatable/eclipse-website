@@ -21,7 +21,7 @@ router.get('/count', (req, res) => {
 router.get('/:title', (req ,res) => {
     const title = decodeURI(req.params.title);
 
-    db.query("SELECT title, description, content, imageUrl, DATE_FORMAT(date,'%d/%m/%Y') as date FROM news WHERE title = ?;", title)
+    db.query("SELECT title, description, content, imageUrl, DATE_FORMAT(date,'%d/%m/%Y') as date FROM news WHERE title = ? ORDER BY DATE ASC;", title)
     .then(rows => {
         res.send(rows[0]);
     }).catch(err => {

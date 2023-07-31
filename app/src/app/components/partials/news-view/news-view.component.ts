@@ -10,11 +10,11 @@ import { News } from 'src/app/shared/models/News';
   styleUrls: ['./news-view.component.scss']
 })
 export class NewsViewComponent implements OnInit, OnDestroy {
-  public news: News;
+  public news: News = new News();
   
   private routeSubscription: Subscription;
 
-  constructor(
+  constructor (
     private newsService:NewsService,
     private activatedRoute:ActivatedRoute,
     private cdr:ChangeDetectorRef
@@ -31,7 +31,7 @@ export class NewsViewComponent implements OnInit, OnDestroy {
       newsObservable.subscribe((serverNews) => {
         this.news = serverNews;
         this.cdr.detectChanges();
-      })
+      });
     });
   }
 

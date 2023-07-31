@@ -11,6 +11,7 @@
             <li (click)="linkClicked()"><a routerLink="/news" >News</a></li>
             <li (click)="linkClicked()"><a routerLink="/members" >Members</a></li>
             <li (click)="linkClicked()"><a routerLink="/about" >About</a></li>
+            <li *ngIf="admin.token" (click)="linkClicked()"><a routerLink="/admin" >Admin</a></li>
         </ul>
     </nav>
     <div class="hamburger" (click)="burgerClicked()" [ngClass]="showNavOnMobile ? 'active' : ''">
