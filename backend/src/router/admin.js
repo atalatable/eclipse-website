@@ -95,7 +95,7 @@ router.post('/add/lineup', (req, res) => {
     if (status == 0) {
         const { name } = req.body;
 
-        db.query("INSERT INTO lineups (name) VALUES (?, ?);", [name])
+        db.query("INSERT INTO lineups (name) VALUES (?);", [name])
         .then(status => {
             res.status(200).json({message: "Successfully added"});
         }).catch(err => {

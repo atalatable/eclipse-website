@@ -3,7 +3,7 @@
 <h2>Add</h2>
 
 <form (ngSubmit)="add()">
-    <input type="text" [(ngModel)]="addName" placeholder="Name" name="name">
+    <input type="text" [(ngModel)]="addName" placeholder="Name" name="name" autocomplete="off">
     <input type="link" [(ngModel)]="addLink" placeholder="Link" name="link" autocomplete="off">
     <input type="submit" value="Add">
 </form>

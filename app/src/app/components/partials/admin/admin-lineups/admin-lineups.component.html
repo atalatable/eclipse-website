@@ -1,1 +1,42 @@
-<p>admin-lineups works!</p>
+<h1>Lineups</h1>
+
+<h2>Add</h2>
+
+<form (ngSubmit)="add()">
+    <input type="text" [(ngModel)]="addName" placeholder="Name" name="name" autocomplete="off">
+    <input type="submit" value="Add">
+</form>
+
+<hr>
+
+<h2>Edit</h2>
+
+<form class="choose-edit" *ngIf="currentList.length > 0" (change)="changeEditValue()">
+    <label for="name">Chose the lineup : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="chooseUpdateName">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let lineup of currentList" [value]="lineup">
+    </datalist>
+</form>
+
+<form (ngSubmit)="update()">
+    <input type="text" [(ngModel)]="updateName" placeholder="Name" name="name">
+    <input type="submit" value="Update">
+</form>
+
+<hr>
+
+<h2>Delete</h2>
+
+<form class="choose-delete" *ngIf="currentList.length > 0">
+    <label for="name">Chose the lineup : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="deleteName">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let lineup of currentList" [value]="lineup.name">
+    </datalist>
+</form>
+
+<form *ngIf="deleteName != ''" (ngSubmit)="delete()">
+    <p>The selected lineup is {{ deleteName }}</p>
+    <input type="submit" value="delete">
+</form>
