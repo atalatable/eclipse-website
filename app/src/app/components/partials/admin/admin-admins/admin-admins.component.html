@@ -1,1 +1,36 @@
-<p>admin-admins works!</p>
+<h1>Admin, Logged as {{ currentAdmin.username }}</h1>
+
+<h2>Add</h2>
+
+<form (ngSubmit)="add()">
+    <input type="text" [(ngModel)]="addName" placeholder="Name" name="name" autocomplete="off">
+    <input type="password" [(ngModel)]="addPassword" placeholder="Password" name="password">
+    <input type="submit" value="Add">
+</form>
+
+<hr>
+
+<h2>Change your password</h2>
+
+<form (ngSubmit)="update()">
+    <input type="password" [(ngModel)]="currentPassword" placeholder="Current password" name="password">
+    <input type="password" [(ngModel)]="updatePassword" placeholder="New password" name="name">
+    <input type="submit" value="Change">
+</form>
+
+<hr>
+
+<h2>Delete</h2>
+
+<form class="choose-delete" *ngIf="currentList.length > 0">
+    <label for="name">Chose the admin : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="deleteName" autocomplete="off">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let admin of currentList" [value]="admin">
+    </datalist>
+</form>
+
+<form *ngIf="deleteName != ''" (ngSubmit)="delete()">
+    <p>The selected admin is {{ deleteName }}</p>
+    <input type="submit" value="delete">
+</form>

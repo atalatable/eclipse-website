@@ -3,7 +3,7 @@ import { Admin } from '../shared/models/Admin';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IAdminLogin } from '../shared/interfaces/IAdminLogin';
 import { HttpClient } from '@angular/common/http';
-import { ADMIN_ADD_ADMIN, ADMIN_ADD_LINEUP, ADMIN_ADD_MEMBER, ADMIN_ADD_NEWS, ADMIN_ADD_SOCIAL, ADMIN_DELETE_ADMIN, ADMIN_DELETE_LINEUP, ADMIN_DELETE_MEMBER, ADMIN_DELETE_NEWS, ADMIN_DELETE_SOCIAL, ADMIN_LOGIN_URL, ADMIN_UPDATE_ADMIN, ADMIN_UPDATE_LINEUP, ADMIN_UPDATE_MEMBER, ADMIN_UPDATE_NEWS, ADMIN_UPDATE_SOCIAL, ADMIN_URL_BY_NAME } from '../shared/constants/url';
+import { ADMIN_ADD_ADMIN, ADMIN_ADD_LINEUP, ADMIN_ADD_MEMBER, ADMIN_ADD_NEWS, ADMIN_ADD_SOCIAL, ADMIN_DELETE_ADMIN, ADMIN_DELETE_LINEUP, ADMIN_DELETE_MEMBER, ADMIN_DELETE_NEWS, ADMIN_DELETE_SOCIAL, ADMIN_GET_ADMINS, ADMIN_LOGIN_URL, ADMIN_UPDATE_ADMIN, ADMIN_UPDATE_LINEUP, ADMIN_UPDATE_MEMBER, ADMIN_UPDATE_NEWS, ADMIN_UPDATE_SOCIAL } from '../shared/constants/url';
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Member } from '../shared/models/Member';
@@ -42,6 +42,10 @@ export class AdminService {
     window.location.reload();
   }
 
+  public getAdminNames(): Observable<string[]> {
+    return this.http.get<string[]>(ADMIN_GET_ADMINS, {withCredentials: true});
+  }
+
   public addMember(member:Member) {
     return this.http.post<unknown>(ADMIN_ADD_MEMBER, member, {withCredentials: true});
   }
@@ -58,7 +62,7 @@ export class AdminService {
     return this.http.post<unknown>(ADMIN_ADD_LINEUP, {name: name}, {withCredentials: true})
   }
 
-  public addAdmin(admin:Admin) {
+  public addAdmin(admin:{username:string,password:string}) {
     return this.http.post<unknown>(ADMIN_ADD_ADMIN, admin, {withCredentials: true});
   }
 
@@ -79,7 +83,7 @@ export class AdminService {
   }
 
   public deleteAdmin(adminName:string) {
-    return this.http.post<unknown>(ADMIN_DELETE_ADMIN, {name: adminName}, {withCredentials: true});
+    return this.http.post<unknown>(ADMIN_DELETE_ADMIN, {username: adminName}, {withCredentials: true});
   }
 
   public updateMember(member:Member, prevName:string) {
@@ -105,10 +109,11 @@ export class AdminService {
     return this.http.post<unknown>(ADMIN_UPDATE_LINEUP, sentLu, {withCredentials: true});
   }
 
-  public updateAdmin(admin:Admin, prevName:string) {
-    let sentAdmin = admin;
-    sentAdmin['prevName'] = prevName;
-    return this.http.post<unknown>(ADMIN_UPDATE_ADMIN, sentAdmin, {withCredentials: true});
+  public updateAdmin(newPassword:string, oldPassword:string, adminName:string) {
+    let sentObj = {
+      adminName: adminName, newPassword: newPassword, oldPassword: oldPassword
+    }
+    return this.http.post<unknown>(ADMIN_UPDATE_ADMIN, sentObj, {withCredentials: true});
   }
 
   private setTolLocalStorage(admin:Admin):void {
@@ -139,6 +144,4 @@ export class AdminService {
           '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
       ).join(''));
   }
-  
-
 }

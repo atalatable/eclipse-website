@@ -60,4 +60,4 @@ INSERT INTO `news` (`title`,`description`,`content`,`imageUrl`,`date`) VALUES ('
 
 -- Admin Insertions
 
-INSERT INTO `admin` (`username`, `password`) VALUES ('admin', '5f4dcc3b5aa765d61d8327deb882cf99');
+INSERT INTO `admins` (`username`, `password`) VALUES ('admin', '5f4dcc3b5aa765d61d8327deb882cf99');

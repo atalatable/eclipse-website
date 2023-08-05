@@ -71,9 +71,9 @@ CREATE TABLE `lineups` (
 -- 
 -- ---
 
-DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `admins`;
 		
-CREATE TABLE `admin` (
+CREATE TABLE `admins` (
   `id` INTEGER AUTO_INCREMENT,
   `username` VARCHAR(30) NOT NULL,
   `password` VARCHAR(42) NOT NULL,

@@ -6,10 +6,11 @@ const jwt = require('jsonwebtoken')
 const router = express.Router();
 
 router.post('/login', (req, res) => {
+
     const { username, password } = req.body;
 
     setTimeout(() => {        
-        db.query("SELECT * FROM admin WHERE username = ? and password = ?", [username, md5(password)])
+        db.query("SELECT * FROM admins WHERE username = ? and password = ?", [username, md5(password)])
         .then(rows => {
             if (rows.length > 0) {
                 delete rows[0].password;
@@ -23,6 +24,23 @@ router.post('/login', (req, res) => {
         })
     }, (Math.floor(Math.random() * 5 ) + 1) * 1000)
 });
+
+router.get('/get/adminNames', (req, res) => {
+    
+    const status = verifyAdmin(req.headers.cookie);
+    
+    if (status == 0) {        
+        db.query("SELECT username FROM admins;")
+        .then(rows => {
+            res.send(rows.map(row => row = row.username))
+        }).catch(err => {
+            console.error(err);
+            res.sendStatus(500);
+        });
+    } else {
+        res.sendStatus(status);
+    }
+})
 
 // ADD QUERIES
 
@@ -301,11 +319,19 @@ router.post('/update/admin', (req, res) => {
     const status = verifyAdmin(req.headers.cookie);
 
     if (status == 0) {
-        const { name, password, prevName } = req.body;
+        const { adminName, oldPassword, newPassword } = req.body;
 
-        db.query("UPDATE admins SET name = ?, password = ? WHERE name = ?;", [name, password, prevName])
-        .then(status => {
-            res.status(200).json({message: "Successfully updated"});
+        db.query("SELECT * FROM admins WHERE username = ? AND password = ?;", [adminName, md5(oldPassword)])
+        .then(rows => {
+            if (rows.length > 0) {
+                db.query("UPDATE admins SET password = ? WHERE username = ?", [md5(newPassword), adminName])
+                .then(status => {
+                    res.status(200).json({message: "Successfully updated"});
+                }).catch(err => {
+                    console.error(err)
+                    res.sendStatus(500);
+                })
+            }
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);

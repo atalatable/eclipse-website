@@ -3,7 +3,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { AdminService } from 'src/app/services/admin.service';
 import { MembersService } from 'src/app/services/members.service';
-import { SocialsService } from 'src/app/services/socials.service';
 
 @Component({
   selector: 'app-admin-lineups',
