@@ -1,4 +1,4 @@
-<ul class="paginator">
+<ul class="paginator" *ngIf="getPageAmount() > 1">
     <li (click)="navigateToPage(currentPage - 1)">&laquo;</li>
     <li *ngFor="let i of getPageArray()"
         [ngClass]="currentPage == i ? 'current' : ''"

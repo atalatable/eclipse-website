@@ -31,11 +31,11 @@ router.post('/add/member', (req, res) => {
     const status = verifyAdmin(req.headers.cookie);
 
     if (status == 0) {
-        const { username, role, imageUrl, lineup } = req.body;
+        const { name, role, imageUrl, lineup } = req.body;
     
         if(!lineup) { lineup = 'none' }
         if(!imageUrl) { imageUrl = "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg" }
-        db.query("INSERT INTO members (id_lineups, name, role, imageUrl) SELECT id, ?, ?, ? FROM lineups WHERE name = ?;", [username, role, imageUrl, lineup])
+        db.query("INSERT INTO members (id_lineups, name, role, imageUrl) SELECT id, ?, ?, ? FROM lineups WHERE name = ?;", [name, role, imageUrl, lineup])
         .then(status => {
             res.sendStatus(200);
         }).catch(err => {
@@ -88,7 +88,7 @@ router.post('/add/news', (req, res) => {
     }
 });
 
-router.post('/add/lineups', (req, res) => {
+router.post('/add/lineup', (req, res) => {
     
     const status = verifyAdmin(req.headers.cookie);
 
@@ -133,9 +133,9 @@ router.post('/delete/member', (req, res) => {
     const status = verifyAdmin(req.headers.cookie);
 
     if (status == 0) {
-        const { username } = req.body;
+        const { name } = req.body;
 
-        db.query("DELETE FROM members WHERE name = ?;", [username])
+        db.query("DELETE FROM members WHERE name = ?;", [name])
         .then(status => {
             res.sendStatus(200);
         }).catch(err => {
@@ -185,7 +185,7 @@ router.post('/delete/news', (req, res) => {
     }
 });
 
-router.post('/delete/lineups', (req, res) => {
+router.post('/delete/lineup', (req, res) => {
     
     const status = verifyAdmin(req.headers.cookie);
 
@@ -229,9 +229,9 @@ router.post('/update/member', (req, res) => {
     const status = verifyAdmin(req.headers.cookie);
 
     if (status == 0) {
-        const { username, role, imageUrl, lineup, prevName } = req.body;
+        const { name, role, imageUrl, lineup, prevName } = req.body;
 
-        db.query("UPDATE members SET name = ?, role = ?, imageUrl = ?, id_lineups = (SELECT id FROM lineups WHERE name = ?) WHERE name = ?;", [username, role, imageUrl, lineup, prevName])
+        db.query("UPDATE members SET name = ?, role = ?, imageUrl = ?, id_lineups = (SELECT id FROM lineups WHERE name = ?) WHERE name = ?;", [name, role, imageUrl, lineup, prevName])
         .then(status => {
             res.sendStatus(200);
         }).catch(err => {
@@ -279,7 +279,7 @@ router.post('/update/news', (req, res) => {
     }
 });
 
-router.post('/update/lineups', (req, res) => {
+router.post('/update/lineup', (req, res) => {
     const status = verifyAdmin(req.headers.cookie);
 
     if (status == 0) {

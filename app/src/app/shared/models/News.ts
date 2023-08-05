@@ -3,5 +3,5 @@ export class News {
     description?:string;
     content!:string;
     imageUrl?:string;
-    date!:string
+    date?:string
 }

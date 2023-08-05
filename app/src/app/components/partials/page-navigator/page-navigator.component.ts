@@ -38,7 +38,7 @@ export class PageNavigatorComponent {
     return returnArray;
   }
 
-  private getPageAmount():number {
+  public getPageAmount():number {
     return Math.ceil(this.newsAmmount / NEWS_PER_PAGES);
   }
 }
