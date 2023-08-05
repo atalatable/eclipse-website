@@ -23,7 +23,7 @@ import { PageNavigatorComponent } from './components/partials/page-navigator/pag
 import { MarkdownModule } from 'ngx-markdown';
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { LoginComponent } from './components/pages/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminSideMenuComponent } from './components/partials/admin-side-menu/admin-side-menu.component';
@@ -72,7 +72,8 @@ import { AdminLineupsComponent } from './components/partials/admin/admin-lineups
       positionClass: 'toast-top-right',
       newestOnTop: true
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},

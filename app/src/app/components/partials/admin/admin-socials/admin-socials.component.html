@@ -1,1 +1,44 @@
-<p>admin-socials works!</p>
+<h1>Socials</h1>
+
+<h2>Add</h2>
+
+<form (ngSubmit)="add()">
+    <input type="text" [(ngModel)]="addName" placeholder="Name" name="name">
+    <input type="link" [(ngModel)]="addLink" placeholder="Link" name="link" autocomplete="off">
+    <input type="submit" value="Add">
+</form>
+
+<hr>
+
+<h2>Edit</h2>
+
+<form class="choose-edit" *ngIf="currentList.length > 0" (change)="changeEditValue()">
+    <label for="name">Chose the social : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="chooseUpdateName">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let social of currentList" [value]="social.name">
+    </datalist>
+</form>
+
+<form (ngSubmit)="update()">
+    <input type="text" [(ngModel)]="updateName" placeholder="Name" name="name">
+    <input type="text" [(ngModel)]="updateLink" placeholder="Link" name="link" autocomplete="off">
+    <input type="submit" value="Update">
+</form>
+
+<hr>
+
+<h2>Delete</h2>
+
+<form class="choose-delete" *ngIf="currentList.length > 0">
+    <label for="name">Chose the social : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="deleteName">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let social of currentList" [value]="social.name">
+    </datalist>
+</form>
+
+<form *ngIf="deleteName != ''" (ngSubmit)="delete()">
+    <p>The selected social is {{ deleteName }}</p>
+    <input type="submit" value="delete">
+</form>
