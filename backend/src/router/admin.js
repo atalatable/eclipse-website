@@ -37,7 +37,7 @@ router.post('/add/member', (req, res) => {
         if(!imageUrl) { imageUrl = "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg" }
         db.query("INSERT INTO members (id_lineups, name, role, imageUrl) SELECT id, ?, ?, ? FROM lineups WHERE name = ?;", [name, role, imageUrl, lineup])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully added"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -56,7 +56,7 @@ router.post('/add/social', (req, res) => {
 
         db.query("INSERT INTO socials (name, link) VALUES (?, ?);", [name, link])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully added"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -78,7 +78,7 @@ router.post('/add/news', (req, res) => {
 
         db.query("INSERT INTO news (title, description, content, imageUrl) VALUES (?, ?, ?, ?);", [title, description, content, imageUrl])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully added"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -97,7 +97,7 @@ router.post('/add/lineup', (req, res) => {
 
         db.query("INSERT INTO lineups (name) VALUES (?, ?);", [name])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully added"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -116,7 +116,7 @@ router.post('/add/admin', (req, res) => {
 
         db.query("INSERT INTO admins (username, password) VALUES (?, ?);", [username, md5(password)])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully added"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -137,7 +137,7 @@ router.post('/delete/member', (req, res) => {
 
         db.query("DELETE FROM members WHERE name = ?;", [name])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully deleted"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -156,7 +156,7 @@ router.post('/delete/social', (req, res) => {
 
         db.query("DELETE FROM socials WHERE name = ?;", [name])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully deleted"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -175,7 +175,7 @@ router.post('/delete/news', (req, res) => {
 
         db.query("DELETE FROM news WHERE title = ?;", [title])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully deleted"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -194,7 +194,7 @@ router.post('/delete/lineup', (req, res) => {
 
         db.query("DELETE FROM lineups WHERE name = ?;", [name])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully deleted"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -213,7 +213,7 @@ router.post('/delete/admin', (req, res) => {
 
         db.query("DELETE FROM admins WHERE username = ?;", [username])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully deleted"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -233,7 +233,7 @@ router.post('/update/member', (req, res) => {
 
         db.query("UPDATE members SET name = ?, role = ?, imageUrl = ?, id_lineups = (SELECT id FROM lineups WHERE name = ?) WHERE name = ?;", [name, role, imageUrl, lineup, prevName])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully updated"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -251,7 +251,7 @@ router.post('/update/social', (req, res) => {
 
         db.query("UPDATE socials SET name = ?, link = ? WHERE name = ?;", [name, link, prevName])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully updated"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -269,7 +269,7 @@ router.post('/update/news', (req, res) => {
 
         db.query("UPDATE news SET title = ?, description = ?, content = ?, imageUrl = ? WHERE title = ?;", [title, description, content, imageUrl, prevTitle])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully updated"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -287,7 +287,7 @@ router.post('/update/lineup', (req, res) => {
 
         db.query("UPDATE lineups SET name = ? WHERE name = ?;", [name, prevName])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully updated"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -305,7 +305,7 @@ router.post('/update/admin', (req, res) => {
 
         db.query("UPDATE admins SET name = ?, password = ? WHERE name = ?;", [name, password, prevName])
         .then(status => {
-            res.sendStatus(200);
+            res.status(200).json({message: "Successfully updated"});
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
