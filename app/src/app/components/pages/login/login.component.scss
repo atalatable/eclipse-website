@@ -14,6 +14,36 @@ form {
             margin-left: 20px;
         }
     }
+
+    input[type="submit"] {
+        outline:none;
+        height: 40px;
+        text-align: center;
+        width: 130px;
+        border-radius:40px;
+        background: transparent;
+        border: 2px solid var(--textColor);
+        color: var(--textColor);
+        letter-spacing:1px;
+        text-shadow:0;
+
+        font: {
+            size:12px;
+            weight:bold;
+        }
+
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+            color: rgb(47, 206, 47);
+            background: var(--textColor);
+        }
+        &:active {
+            letter-spacing: 2px ;
+        }
+    }
+
 }
 
 .form-container {

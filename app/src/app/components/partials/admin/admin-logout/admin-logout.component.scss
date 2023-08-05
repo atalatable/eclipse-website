@@ -1,0 +1,29 @@
+button {
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius:40px;
+  background: red;
+  border: 2px solid var(--textColor);
+  color: var(--textColor);
+  letter-spacing:1px;
+  text-shadow:0;
+
+  font: {
+    size:12px;
+    weight:bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color: red;
+    background: var(--textColor);
+  }
+  &:active {
+    letter-spacing: 2px ;
+  }
+  &:after {
+    content:"LOGOUT";
+  }
+}

@@ -32,6 +32,7 @@ import { AdminAdminsComponent } from './components/partials/admin/admin-admins/a
 import { AdminNewsComponent } from './components/partials/admin/admin-news/admin-news.component';
 import { AdminMembersComponent } from './components/partials/admin/admin-members/admin-members.component';
 import { AdminSocialsComponent } from './components/partials/admin/admin-socials/admin-socials.component';
+import { AdminLineupsComponent } from './components/partials/admin/admin-lineups/admin-lineups.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AdminSocialsComponent } from './components/partials/admin/admin-socials
     AdminAdminsComponent,
     AdminNewsComponent,
     AdminMembersComponent,
-    AdminSocialsComponent
+    AdminSocialsComponent,
+    AdminLineupsComponent
   ],
   imports: [
     BrowserModule,

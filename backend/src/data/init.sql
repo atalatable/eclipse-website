@@ -107,3 +107,5 @@ ALTER TABLE `members` ADD FOREIGN KEY (id_lineups) REFERENCES `lineups` (`id`);
 -- ('','','','','','');
 -- INSERT INTO `socials` (`id`,`name`,`link`) VALUES
 -- ('','','');
+-- INSERT INTO `admins` (`id`,`username`,`password`) VALUES
+-- ('','','');
