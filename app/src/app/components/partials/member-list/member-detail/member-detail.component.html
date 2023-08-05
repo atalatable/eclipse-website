@@ -5,7 +5,8 @@
     [ngClass]="state">
 
         <div class="front">
-            <img [src]="member.imageUrl" alt="{{member.name}} profile picture" draggable="false">
+            <img *ngIf="member.imageUrl !== ''" [src]="member.imageUrl" alt="picture" draggable="false" onerror="this.src = 'https://t3.ftcdn.net/jpg/03/53/11/00/360_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg'">
+            <p *ngIf="member.imageUrl === ''">No pictures</p>
             <p>{{member.name}}</p>
         </div>
         <div class="back">

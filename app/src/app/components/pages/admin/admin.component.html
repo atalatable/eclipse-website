@@ -1,3 +1,10 @@
-<p>Hello {{admin.username}}</p>
-
-<button (click)="logout()">Logout</button>
+<div class="admin-container">
+    <app-admin-side-menu #adminMenu></app-admin-side-menu>
+    <div class="admin-content-container">
+        <app-admin-socials *ngIf="adminMenu.choice == 'socials'"></app-admin-socials>
+        <app-admin-members *ngIf="adminMenu.choice == 'members'"></app-admin-members>
+        <app-admin-news *ngIf="adminMenu.choice == 'news'"></app-admin-news>
+        <app-admin-admins *ngIf="adminMenu.choice == 'admins'"></app-admin-admins>
+        <app-admin-logout *ngIf="adminMenu.choice == 'logout'"></app-admin-logout>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<ul draggable="false">
+    <li (click)="onClick('socials')" [ngClass]="choice == 'socials' ? 'selected' : ''"><a>Socials</a></li>
+    <li (click)="onClick('members')" [ngClass]="choice == 'members' ? 'selected' : ''"><a>Members</a></li>
+    <li (click)="onClick('news')" [ngClass]="choice == 'news' ? 'selected' : ''"><a>News</a></li>
+    <li (click)="onClick('admins')" [ngClass]="choice == 'admins' ? 'selected' : ''"><a>Admins</a></li>
+    <li (click)="onClick('logout')" [ngClass]="choice == 'logout' ? 'selected' : ''"><a>Logout</a></li>
+</ul>

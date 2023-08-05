@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,12 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminSideMenuComponent } from './components/partials/admin-side-menu/admin-side-menu.component';
+import { AdminLogoutComponent } from './components/partials/admin/admin-logout/admin-logout.component';
+import { AdminAdminsComponent } from './components/partials/admin/admin-admins/admin-admins.component';
+import { AdminNewsComponent } from './components/partials/admin/admin-news/admin-news.component';
+import { AdminMembersComponent } from './components/partials/admin/admin-members/admin-members.component';
+import { AdminSocialsComponent } from './components/partials/admin/admin-socials/admin-socials.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +51,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NewsViewComponent,
     PageNavigatorComponent,
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    AdminSideMenuComponent,
+    AdminLogoutComponent,
+    AdminAdminsComponent,
+    AdminNewsComponent,
+    AdminMembersComponent,
+    AdminSocialsComponent
   ],
   imports: [
     BrowserModule,
@@ -53,14 +66,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MarkdownModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot({
-      timeOut: 3000,
+      timeOut: 5000,
       positionClass: 'toast-top-right',
       newestOnTop: true
     }),
     BrowserAnimationsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

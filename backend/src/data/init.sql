@@ -15,10 +15,10 @@ DROP TABLE IF EXISTS `members`;
 		
 CREATE TABLE `members` (
   `id` INTEGER AUTO_INCREMENT,
-  `id_lineups` INTEGER,
-  `name` VARCHAR(40) DEFAULT "",
+  `id_lineups` INTEGER DEFAULT 5,
+  `name` VARCHAR(40) NOT NULL,
   `role` VARCHAR(40) DEFAULT "",
-  `imageUrl` VARCHAR(256) DEFAULT "",
+  `imageUrl` VARCHAR(256) DEFAULT "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg",
   PRIMARY KEY (`id`)
 );
 
@@ -62,7 +62,7 @@ DROP TABLE IF EXISTS `lineups`;
 		
 CREATE TABLE `lineups` (
   `id` INTEGER AUTO_INCREMENT,
-  `name` VARCHAR(30),
+  `name` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -75,8 +75,8 @@ DROP TABLE IF EXISTS `admin`;
 		
 CREATE TABLE `admin` (
   `id` INTEGER AUTO_INCREMENT,
-  `username` VARCHAR(30),
-  `password` VARCHAR(42),
+  `username` VARCHAR(30) NOT NULL,
+  `password` VARCHAR(42) NOT NULL,
   PRIMARY KEY (`id`)
 );
 

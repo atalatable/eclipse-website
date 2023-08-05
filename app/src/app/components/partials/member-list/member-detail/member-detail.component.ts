@@ -12,7 +12,6 @@ export class MemberDetailComponent {
   state: "" | "flipped" = "";
 
   cardClicked(): void {
-    console.log(this.member.imageUrl);
     this.state === "" ?
       this.state = "flipped" : this.state = "";
   }

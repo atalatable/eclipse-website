@@ -1,5 +1,5 @@
 export class Admin {
-    id!: number;
+    id?: number;
     username!: string;
     token!: string;
 }

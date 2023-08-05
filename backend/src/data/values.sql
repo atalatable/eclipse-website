@@ -4,6 +4,7 @@ INSERT INTO `lineups` (`id`, `name`) VALUES (1, 'stellar');
 INSERT INTO `lineups` (`id`, `name`) VALUES (2, 'pulsar');
 INSERT INTO `lineups` (`id`, `name`) VALUES (3, 'nova');
 INSERT INTO `lineups` (`id`, `name`) VALUES (4, 'LoL');
+INSERT INTO `lineups` (`id`, `name`) VALUES (5, 'none');
 
 -- Members Insertions
 

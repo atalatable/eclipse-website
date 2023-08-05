@@ -3,5 +3,4 @@ export class Member {
     role!:string;
     imageUrl?:string = "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg";
     lineup?:string;
-    desc?:string;
 }

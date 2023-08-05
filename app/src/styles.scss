@@ -67,6 +67,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 app-root {
@@ -88,6 +89,9 @@ ul {
 
 main {
     margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 ::-webkit-scrollbar {

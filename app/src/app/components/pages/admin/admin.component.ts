@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AdminService } from 'src/app/services/admin.service';
 import { Admin } from 'src/app/shared/models/Admin';
+import { Member } from 'src/app/shared/models/Member';
 
 @Component({
   selector: 'app-admin',
@@ -17,7 +19,7 @@ export class AdminComponent implements OnInit {
   ) {
     this.adminService.adminObservable.subscribe((newAdmin) => {
       this.admin = newAdmin;
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -28,5 +30,19 @@ export class AdminComponent implements OnInit {
 
   logout():void {
     this.adminService.logout();
+  }
+
+  add():void {
+    let m:any;
+
+    let luObservable:Observable<unknown>;
+
+    luObservable = this.adminService.addMember(new Member());
+
+    luObservable.subscribe(serverLu => {
+      m = serverLu;
+    });
+
+    console.log(m)
   }
 }
