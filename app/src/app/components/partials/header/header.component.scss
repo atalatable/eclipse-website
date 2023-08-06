@@ -18,16 +18,23 @@ header {
 
         text-transform: uppercase;
 
+        &:hover {
+            img {
+                transform: rotate(360deg);
+            }
+        }
+        
         & h1 {
             font-weight: 800;
             margin: 0;
             padding-top: 8px;
         }
-
+        
         & img {
             display: block;
             border-radius: 100%;
             height: 80%;
+            transition: transform .7s;
         }
     }
 
@@ -168,4 +175,13 @@ $breakpoint-header: 550px;
             cursor: pointer;
         }
     }
+}
+
+@keyframes rotate-img {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }

@@ -30,7 +30,7 @@ export class AdminService {
           this.toastrService.success( `Welcome, ${admin.username}`, "Login successful" )
         },
         error: (err) => {
-          this.toastrService.error( err.error, "Login Failed" );
+          this.toastrService.error( err.error == "Not Found" ? "Wrong username or password" : err.error, "Login Failed" );
         }
       })
     )

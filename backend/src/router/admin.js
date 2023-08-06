@@ -89,7 +89,7 @@ router.post('/add/news', (req, res) => {
     const status = verifyAdmin(req.headers.cookie);
 
     if (status == 0) {
-        const { title, description, content, imageUrl } = req.body;
+        let { title, description, content, imageUrl } = req.body;
 
         if(!description) {description = ""}
         if(!imageUrl) {imageUrl = ""}

@@ -1,1 +1,48 @@
-<p>admin-news works!</p>
+<h1>News</h1>
+
+<h2>Add</h2>
+
+<form (ngSubmit)="add()">
+    <input type="text" [(ngModel)]="addTitle" placeholder="Title" name="title" autocomplete="off">
+    <input type="text" [(ngModel)]="addDesc" placeholder="Description" name="description" autocomplete="off">
+    <textarea name="content" cols="100" rows="10" placeholder="Content" [(ngModel)]="addContent"></textarea>
+    <input type="text" name="imageUrl" [(ngModel)]="addImageUrl" placeholder="Image Link" autocomplete="off">
+    <input type="submit" value="Add">
+</form>
+
+<hr>
+
+<h2>Edit</h2>
+
+<form class="choose-edit" *ngIf="currentList.length > 0" (change)="changeEditValue()">
+    <label for="name">Chose the news : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="chooseUpdateTitle">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let title of currentList" [value]="title">
+    </datalist>
+</form>
+
+<form (ngSubmit)="update()">
+    <input type="text" [(ngModel)]="updateTitle" placeholder="Title" name="title" autocomplete="off">
+    <input type="text" [(ngModel)]="updateDesc" placeholder="Description" name="description" autocomplete="off">
+    <textarea name="content" cols="30" rows="10" placeholder="Content" [(ngModel)]="updateContent"></textarea>
+    <input type="text" name="imageUrl" [(ngModel)]="updateImageUrl" placeholder="Image Link" autocomplete="off">
+    <input type="submit" value="Update">
+</form>
+
+<hr>
+
+<h2>Delete</h2>
+
+<form class="choose-delete" *ngIf="currentList.length > 0">
+    <label for="name">Chose the news : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="deleteTitle">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let title of currentList" [value]="title">
+    </datalist>
+</form>
+
+<form *ngIf="deleteTitle != ''" (ngSubmit)="delete()">
+    <p>The selected news is {{ deleteTitle }}</p>
+    <input type="submit" value="delete">
+</form>
