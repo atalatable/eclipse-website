@@ -4,6 +4,8 @@ import { isDevMode } from '@angular/core';
 const API_URL = isDevMode() ? "http://localhost:5000/api" : "/api";
 
 export const MEMBERS_URL = API_URL + "/members";
+export const MEMBERS_NAMES_URL = API_URL + "/members/names";
+export const MEMBERS_BY_NAME_URL = API_URL + "/members/names/";
 export const LINEUPS_URL = API_URL + "/members/lineups";
 export const MEMBERS_BY_LU_URL = API_URL + "/members/lineups/";
 

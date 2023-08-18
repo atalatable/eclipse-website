@@ -49,7 +49,7 @@ router.post('/add/member', (req, res) => {
     const status = verifyAdmin(req.headers.cookie);
 
     if (status == 0) {
-        const { name, role, imageUrl, lineup } = req.body;
+        let { name, role, imageUrl, lineup } = req.body;
     
         if(!lineup) { lineup = 'none' }
         if(!imageUrl) { imageUrl = "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg" }

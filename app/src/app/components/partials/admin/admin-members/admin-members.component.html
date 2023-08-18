@@ -1,1 +1,54 @@
-<p>admin-members works!</p>
+<h1>Members</h1>
+
+<h2>Add</h2>
+
+<form (ngSubmit)="add()">
+    <input type="text" [(ngModel)]="addName" placeholder="Name" name="name" autocomplete="off">
+    <input type="text" [(ngModel)]="addRole" placeholder="Role" name="role">
+    <input type="text" [(ngModel)]="addImageUrl" placeholder="Image Url" name="imageUrl" autocomplete="off">
+    <label for="lineup">Lineup : </label>
+    <select name="lineup" id="lineup" [(ngModel)]="addLu">
+        <option *ngFor="let lu of lineups" [value]="lu">{{lu}}</option>
+    </select>
+    <input type="submit" value="Add">
+</form>
+
+<hr>
+
+<h2>Edit</h2>
+
+<form class="choose-edit" *ngIf="currentList.length > 0" (change)="changeEditValue()">
+    <label for="name">Chose the member : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="chooseUpdateName">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let lineup of currentList" [value]="lineup">
+    </datalist>
+</form>
+
+<form (ngSubmit)="update()">
+    <input type="text" [(ngModel)]="updateName" placeholder="Name" name="name">
+    <input type="text" [(ngModel)]="updateRole" placeholder="Role" name="role">
+    <input type="text" [(ngModel)]="updateImageUrl" placeholder="Imqge Url" name="imqgeUrl">
+    <label for="lineup">Lineup : </label>
+    <select name="lineup" id="lineup" [(ngModel)]="updateLu">
+        <option *ngFor="let lu of lineups" [value]="lu">{{lu}}</option>
+    </select>
+    <input type="submit" value="Update">
+</form>
+
+<hr>
+
+<h2>Delete</h2>
+
+<form class="choose-delete" *ngIf="currentList.length > 0">
+    <label for="name">Chose the member : </label>
+    <input list="names" name="name" id="name" autocomplete="off" [(ngModel)]="deleteName" autocomplete="off">
+    <datalist id="names" *ngIf="currentList">
+        <option *ngFor="let names of currentList" [value]="names">
+    </datalist>
+</form>
+
+<form *ngIf="deleteName != ''" (ngSubmit)="delete()">
+    <p>The selected member is {{ deleteName }}</p>
+    <input type="submit" value="delete">
+</form>

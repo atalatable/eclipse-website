@@ -16,6 +16,33 @@ router.get('/', (req, res) => {
 });
 
 /*
+*   Sends an array of all members name
+*/
+router.get('/names', (req, res) => {
+    db.query("SELECT name FROM members;")
+    .then(rows => {
+        res.send(rows.map(item => item.name));
+    }).catch(err => {
+        console.error(err);
+        res.sendStatus(500);
+    });
+});
+
+/*
+*   Sends member based on given name
+*/
+router.get('/names/:name', (req, res) => {
+    const name = req.params.name;
+    db.query("SELECT members.name, members.role, members.imageUrl, lineups.name AS lineup FROM members INNER JOIN lineups on lineups.id = members.id_lineups WHERE members.name = ?;", [name])
+    .then(rows => {
+        res.send(rows[0]);
+    }).catch(err => {
+        console.error(err);
+        res.sendStatus(500);
+    });
+})
+
+/*
 *   Sends all the linups in an array
 */
 router.get('/lineups', (req, res) => {
