@@ -27,7 +27,7 @@
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     
-    & div {
+    & > div {
         display: block;
         height: 100%;
         width: 100%;
@@ -56,12 +56,19 @@
         }
 
         &.front {
-            & img {
-                margin-top: 10px;
+            .imageDiv {
                 height: 80px;
-                width: auto;
+                width: 80px;
+                margin-top: 10px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
                 border-radius: 100%;
                 user-select: none;
+            }
+
+            p {
+                margin: auto;
             }
         }
 
