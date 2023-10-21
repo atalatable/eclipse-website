@@ -155,7 +155,11 @@ router.post('/delete/member', (req, res) => {
 
         db.query("DELETE FROM members WHERE name = ?;", [name])
         .then(status => {
-            res.status(200).json({message: "Successfully deleted"});
+            if (status.affectedRows == 1) {
+                res.status(200).json({message: "Successfully deleted"});
+            } else {
+                res.sendStatus(404);
+            }
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -174,7 +178,11 @@ router.post('/delete/social', (req, res) => {
 
         db.query("DELETE FROM socials WHERE name = ?;", [name])
         .then(status => {
-            res.status(200).json({message: "Successfully deleted"});
+            if (status.affectedRows == 1) {
+                res.status(200).json({message: "Successfully deleted"});
+            } else {
+                res.sendStatus(404);
+            }
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -193,7 +201,11 @@ router.post('/delete/news', (req, res) => {
 
         db.query("DELETE FROM news WHERE title = ?;", [title])
         .then(status => {
-            res.status(200).json({message: "Successfully deleted"});
+            if (status.affectedRows == 1) {
+                res.status(200).json({message: "Successfully deleted"});
+            } else {
+                res.sendStatus(404);
+            }
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -212,7 +224,11 @@ router.post('/delete/lineup', (req, res) => {
 
         db.query("DELETE FROM lineups WHERE name = ?;", [name])
         .then(status => {
-            res.status(200).json({message: "Successfully deleted"});
+            if (status.affectedRows == 1) {
+                res.status(200).json({message: "Successfully deleted"});
+            } else {
+                res.sendStatus(404);
+            }
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
@@ -231,7 +247,11 @@ router.post('/delete/admin', (req, res) => {
 
         db.query("DELETE FROM admins WHERE username = ?;", [username])
         .then(status => {
-            res.status(200).json({message: "Successfully deleted"});
+            if (status.affectedRows == 1) {
+                res.status(200).json({message: "Successfully deleted"});
+            } else {
+                res.sendStatus(404);
+            }
         }).catch(err => {
             console.error(err);
             res.sendStatus(500);
